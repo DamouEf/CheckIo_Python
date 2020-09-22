@@ -10,10 +10,10 @@ Output: Boolean.
 def is_stressful(subj: str) -> bool:
     if subj.isupper():
         return True
+    if subj[-3:] in ['!!!']:
+        return True
     for index , string in enumerate(subj.split()):
         if ''.join([word for index, word in enumerate(string) if (index is 0 or (word is not subj[index-1] and index is not 0)) and word.isalpha()]).lower() in ["help", "asap", "urgent"]:
-            return True
-        if string[-3:] in ['!!!'] and index is len(subj.split())-1:
             return True
     return False
 
