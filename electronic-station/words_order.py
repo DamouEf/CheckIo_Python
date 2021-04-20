@@ -13,18 +13,8 @@ Output: A bool.
 
 
 def words_order(text: str, words: list) -> bool:
-    
-    list_words: list = text.split()
-    previous_index: int = -1
-
-    for word in words:
-        if word not in list_words:
-            return False
-        current_index = text.index(word)
-        if current_index <= previous_index:
-            return False
-        previous_index = current_index
-    return True
+    text_words = {w for w in text.split() if w in words}
+    return list(sorted(text_words, key=text.index)) == words
 
 
 if __name__ == '__main__':
