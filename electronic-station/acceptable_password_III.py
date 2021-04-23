@@ -12,7 +12,7 @@ Output: A bool.
 
 def is_acceptable_password(password: str) -> bool:
     # your code here
-    return ((len(password) > 6) and (any(char.isdigit() for char in password)))
+    return ((len(password) > 6) and (any(char.isdigit() for char in password)) and any(char.isalpha() for char in password))
 
 
 if __name__ == '__main__':
@@ -25,4 +25,5 @@ if __name__ == '__main__':
     assert is_acceptable_password('ashort') == False
     assert is_acceptable_password('muchlonger5') == True
     assert is_acceptable_password('sh5') == False
+    assert is_acceptable_password('1234567') == False
     print("Coding complete? Click 'Check' to earn cool rewards!")
