@@ -10,8 +10,6 @@ Input: A list of positive integers.
 Output: An integer.
 """
 
-from mimetypes import init
-from ntpath import join
 from typing import List
 from functools import cmp_to_key
 
